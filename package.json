@@ -1,0 +1,57 @@
+{
+    "name": "blue-phoenix-icon-theme",
+    "displayName": "Blue Phoenix Icon Theme",
+    "description": "Blue Phoenix Theme",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.44.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "iconThemes": [
+            {
+                "id": "blue-phoenix",
+                "label": "Blue Phoenix",
+                "path": "./themes/blue-phoenix-icon-theme.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "hana_json",
+                "aliases": [
+                    "JSON",
+                    "json"
+                ],
+                "extensions": [
+                    ".hdiconfig", ".hdinamespace",".hdbgrants",".hdbrole",".hdbsynonym",".hdbsynonymtemplate"
+                ],
+                "configuration": "./language-configuration/json-language-configuration.json"
+            },
+            {
+                "id": "sqlscript",
+                "aliases": [
+                    "SQLScript",
+                    "sqlscript"
+                ],
+                "extensions": [
+                    ".hdblibrary",".hdbfunction",".hdbprocedure",".hdbsequence"
+                ],
+                "configuration": "./language-configuration/sqlscript-language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "hana_json",
+                "scopeName": "source.json",
+                "path": "./syntaxes/JSON.tmLanguage.json"
+            },
+            {
+                "language": "sqlscript",
+                "scopeName": "source.sqlscript",
+                "path": "./syntaxes/sqlscript.tmLanguage.json"
+            }
+        ]
+    }
+}
