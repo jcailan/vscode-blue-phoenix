@@ -9,6 +9,10 @@
     "categories": [
         "Themes"
     ],
+    "activationEvents": [
+        "onLanguage:sqlscript"
+    ],
+    "main": "./client/out/extension",
     "contributes": {
         "iconThemes": [
             {
@@ -25,7 +29,12 @@
                     "json"
                 ],
                 "extensions": [
-                    ".hdiconfig", ".hdinamespace",".hdbgrants",".hdbrole",".hdbsynonym",".hdbsynonymtemplate"
+                    ".hdiconfig",
+                    ".hdinamespace",
+                    ".hdbgrants",
+                    ".hdbrole",
+                    ".hdbsynonym",
+                    ".hdbsynonymtemplate"
                 ],
                 "configuration": "./language-configuration/json-language-configuration.json"
             },
@@ -36,7 +45,10 @@
                     "sqlscript"
                 ],
                 "extensions": [
-                    ".hdblibrary",".hdbfunction",".hdbprocedure",".hdbsequence"
+                    ".hdblibrary",
+                    ".hdbfunction",
+                    ".hdbprocedure",
+                    ".hdbsequence"
                 ],
                 "configuration": "./language-configuration/sqlscript-language-configuration.json"
             }
@@ -52,6 +64,44 @@
                 "scopeName": "source.sqlscript",
                 "path": "./syntaxes/sqlscript.tmLanguage.json"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Example configuration",
+            "properties": {
+                "languageServerExample.maxNumberOfProblems": {
+                    "scope": "resource",
+                    "type": "number",
+                    "default": 100,
+                    "description": "Controls the maximum number of problems produced by the server."
+                },
+                "languageServerExample.trace.server": {
+                    "scope": "window",
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VS Code and the language server."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
+        "compile": "tsc -b",
+        "watch": "tsc -b -w",
+        "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+        "test": "sh ./scripts/e2e.sh"
+    },
+    "devDependencies": {
+        "@types/mocha": "^5.2.7",
+        "mocha": "^6.2.2",
+        "@types/node": "^12.11.7",
+        "eslint": "^6.4.0",
+        "@typescript-eslint/parser": "^2.3.0",
+        "typescript": "^3.8.3"
     }
 }
