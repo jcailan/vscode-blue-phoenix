@@ -4,7 +4,7 @@
  * ------------------------------------------------------------------------------------------ */
 
 import * as path from 'path';
-import { workspace, ExtensionContext } from 'vscode';
+import { workspace, ExtensionContext, commands, window } from 'vscode';
 
 import {
 	LanguageClient,
@@ -55,6 +55,60 @@ export function activate(context: ExtensionContext) {
 
 	// Start the client. This will also launch the server
 	client.start();
+
+	// This is the activation for Reverse Word command
+	let disposable = commands.registerCommand(
+		'extension.reverseWord',
+		function () {
+			// Get the active text editor
+			let editor = window.activeTextEditor;
+
+			if (editor) {
+				let document = editor.document;
+				let selection = editor.selection;
+
+				// Get the word within the selection
+				const search: RegExp = /(\/\*)[\w\d\-\n\r\t\? .,;:|/<>"'~!@#$%^&*()+=]*?(\*\/)|--[\w\d\-\t\? .,;:|/<>"'~!@#$%^&*()+=]*|(('[\w\d ".,|()]*?')|("[\w.]*?")(?!\())/g;
+				const keyWordRegex: RegExp = /^\b(library|sqlscript|replace|increment|minvalue|maxvalue|right|public|variable|constant|invoker|true|false|for|do|exit handler|reads|sqlexception|elseif|record_count|round|round_half_up|array_agg|cardinality|string|cast|avg|min|concat|bintostr|sum|(row|table) like|procedure|function|returns?|in|out|declare|using|array|language|sql|security|as|begin|end|if|is|not|or|else|and|then|case|when|while|(tiny)?int|date|integer|boolean|n?varchar|decimal|table|data|select|distinct|top|union all|(inner|left outer) join|on|ifnull|(group|order) by|desc|where|count|into|from|call|break|continue|now|null|values|update|set|insert|delete|commit|exec)\b$/i;
+				const wordRegex: RegExp = /\b(exit handler|union all|(group|order) by|(row|table) like|(inner|left outer) join|(?!\d)(?!\.)[\w.]+)\b/gi;
+				let text = document.getText(selection);
+
+				if (text === '') {
+					window.showWarningMessage('Select a document range to format!');
+					return;
+				}
+
+				let comments: string[] = [];
+				let result: any;
+				
+				do {
+					result = search.exec(text);
+					if (result !== null) {
+						comments.push(result[0]);
+					}
+				} while (result !== null);
+
+				text = text.replace(search, '---');
+				text = text.replace(wordRegex, function (word) {
+					if (keyWordRegex.test(word)) {
+						return word.toUpperCase();
+					} else {
+						return word.toLowerCase();
+					}
+				});
+
+				comments.forEach((comment) => {
+					text = text.replace(/---/, comment);
+				});
+
+				editor.edit((editBuilder) => {
+					editBuilder.replace(selection, text);
+				});
+			}
+		}
+	);
+
+	context.subscriptions.push(disposable);
 }
 
 export function deactivate(): Thenable<void> | undefined {

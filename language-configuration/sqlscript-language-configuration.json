@@ -23,19 +23,67 @@
     "autoClosingPairs": [
         {
             "open": "BEGIN",
-            "close": "END"
+            "close": "END",
+            "notIn": [
+                "string",
+                "comment"
+            ]
         },
         {
             "open": "begin",
-            "close": "end"
+            "close": "end",
+            "notIn": [
+                "string",
+                "comment"
+            ]
         },
         {
             "open": "CASE",
-            "close": "END"
+            "close": "END",
+            "notIn": [
+                "string",
+                "comment"
+            ]
         },
         {
             "open": "case",
-            "close": "end"
+            "close": "end",
+            "notIn": [
+                "string",
+                "comment"
+            ]
+        },
+        {
+            "open": "IF",
+            "close": "END IF",
+            "notIn": [
+                "string",
+                "comment"
+            ]
+        },
+        {
+            "open": "if",
+            "close": "end if",
+            "notIn": [
+                "string",
+                "comment"
+            ]
+        },
+        {
+            "open": "FOR",
+            "close": "END FOR",
+            "notIn": [
+                "string",
+                "comment"
+            ]
+        },
+        {
+            "open": "for",
+            "close": "end for",
+            "notIn": [
+                "string",
+                "comment"
+            ]
         },
         {
             "open": "{",
@@ -47,7 +95,7 @@
         },
         {
             "open": "(",
-            "close": "}"
+            "close": ")"
         },
         {
             "open": "\"",
@@ -67,6 +115,14 @@
         {
             "open": "'",
             "close": "'",
+            "notIn": [
+                "string",
+                "comment"
+            ]
+        },
+        {
+            "open": "/**",
+            "close": "*/",
             "notIn": [
                 "string",
                 "comment"
@@ -101,11 +157,11 @@
     ],
     "indentationRules": {
         "increaseIndentPattern": {
-            "pattern": "^\\s*(BEGIN).*\\.$",
+            "pattern": "begin|case|if|else if|else|for",
             "flags": "i"
         },
         "decreaseIndentPattern": {
-            "pattern": "^\\s*(END)\\.$",
+            "pattern": "end( (if|for))?|else",
             "flags": "i"
         }
     }

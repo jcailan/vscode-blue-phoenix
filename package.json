@@ -10,10 +10,27 @@
         "Themes"
     ],
     "activationEvents": [
-        "onLanguage:sqlscript"
+        "onLanguage:sqlscript",
+        "onCommand:extension.reverseWord"
     ],
     "main": "./client/out/extension",
     "contributes": {
+        "commands": [
+            {
+                "command": "extension.reverseWord",
+                "title": "Reverse Word"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "resourceLangId == sqlscript",
+                    "command": "extension.reverseWord",
+                    "alt": "extension.reverseWord",
+                    "group": "extensions"
+                }
+            ]
+        },
         "iconThemes": [
             {
                 "id": "blue-phoenix",
