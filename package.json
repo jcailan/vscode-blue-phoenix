@@ -1,40 +1,37 @@
 {
-    "name": "blue-phoenix-icon-theme",
-    "displayName": "Blue Phoenix Icon Theme",
-    "description": "Blue Phoenix Theme",
-    "version": "0.0.1",
+    "name": "blue-phoenix",
+    "displayName": "Blue Phoenix",
+    "description": "SAP Development Tools in VS Code",
+    "version": "1.0.0",
+    "publisher": "jhodel",
     "engines": {
         "vscode": "^1.44.0"
     },
     "categories": [
-        "Themes"
+        "Programming Languages",
+        "Themes",
+        "Formatters"
     ],
+	"keywords": [
+        "xsjs", "xsjslib", "xsodata", "sap", "capm", "cap model", "hana", "xsa", "sqlscript"
+    ],
+	"bugs": {
+		"url": "https://github.com/jcailan/vscode-blue-phoenix/issues"
+    },
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jcailan/vscode-blue-phoenix"
+    },
+    "icon": "images/icon.png",
     "activationEvents": [
-        "onLanguage:sqlscript",
-        "onCommand:extension.reverseWord"
+        "onLanguage:sqlscript"
     ],
     "main": "./client/out/extension",
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.reverseWord",
-                "title": "Reverse Word"
-            }
-        ],
-        "menus": {
-            "editor/context": [
-                {
-                    "when": "resourceLangId == sqlscript",
-                    "command": "extension.reverseWord",
-                    "alt": "extension.reverseWord",
-                    "group": "extensions"
-                }
-            ]
-        },
         "iconThemes": [
             {
                 "id": "blue-phoenix",
-                "label": "Blue Phoenix",
+                "label": "Blue Phoenix Icon Theme",
                 "path": "./themes/blue-phoenix-icon-theme.json"
             }
         ],
@@ -68,6 +65,12 @@
                     ".hdbsequence"
                 ],
                 "configuration": "./language-configuration/sqlscript-language-configuration.json"
+            },
+            {
+                "id": "xsjs",
+                "aliases": ["XSJS", "xsjs"],
+                "extensions": [".xsjs",".xsjslib",".xsodata"],
+                "configuration": "./language-configuration/xsjs-language-configuration.json"
             }
         ],
         "grammars": [
@@ -80,31 +83,16 @@
                 "language": "sqlscript",
                 "scopeName": "source.sqlscript",
                 "path": "./syntaxes/sqlscript.tmLanguage.json"
-            }
-        ],
-        "configuration": {
-            "type": "object",
-            "title": "Example configuration",
-            "properties": {
-                "languageServerExample.maxNumberOfProblems": {
-                    "scope": "resource",
-                    "type": "number",
-                    "default": 100,
-                    "description": "Controls the maximum number of problems produced by the server."
-                },
-                "languageServerExample.trace.server": {
-                    "scope": "window",
-                    "type": "string",
-                    "enum": [
-                        "off",
-                        "messages",
-                        "verbose"
-                    ],
-                    "default": "off",
-                    "description": "Traces the communication between VS Code and the language server."
+            },
+            {
+                "language": "xsjs",
+                "scopeName": "source.xsjs",
+                "path": "./syntaxes/xsjs.tmLanguage.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.javascript": "javascript"
                 }
             }
-        }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",

@@ -1,9 +1,21 @@
 # Change Log
 
-All notable changes to the "sap-icon-theme" extension will be documented in this file.
+All notable changes to the **Blue Phoenix** extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+#### Unreleased
 
-## [Unreleased]
+- Still tinkering on what should be the next feature to add
 
-- Initial release
+#### Release 1.0.0
+
+- SQLScript Language Support
+	- Syntax highlighting
+	- Grammar: auto indentation and closing
+	- Source code formatting
+- HANA Configuration Artifacts
+	- JSON Syntax Highlighting
+- XSJS Framework
+	- Syntax highlighting
+	- Grammar: auto indentation and closing
+- File Icon Theme Support
+	- HANA and XSJS development artifacts

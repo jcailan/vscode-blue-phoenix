@@ -1,13 +1,34 @@
-# README
-## This is the README for your extension "sap-icon-theme"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+![Icon](images/icon-small.png)
+# Blue Phoenix
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+Blue Phoenix is a VS Code extension which targets support for SAP Development frameworks and programming languages in the Cloud Application Programming Model (CAPM) space.
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## Features
 
-**Enjoy!**
+- SQLScript Language Support
+	- Syntax highlighting
+	- Grammar: auto indentation and closing
+	- Source code formatting
+- HANA Configuration Artifacts
+	- JSON Syntax Highlighting
+- XSJS Framework
+	- Syntax highlighting
+	- Grammar: auto indentation and closing
+- File Icon Theme Support
+	- HANA and XSJS development artifacts
+
+![Screenshot](images/sqlscript-syntax-highlighting.png)
+
+## SAP XSJS Language Support
+
+This is to support syntax highlighting for SAP XSJS framework which is based in JavaScript language.
+
+> This piece of VS Code extension was initially published in [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=jhodel.jcailan-xsjs) as [SAP XSJS Language Support](https://github.com/jcailan/xsjs) with the intention to just provide syntax highlighting for SAP XSJS framework. Soon after, I found out that there are more features that are missing hence the creation of this project which is more broad in scope that just covering for XSJS framework.
+
+![Screenshot](images/xsjs-syntax-highlighting.png)
+
+## Appendix
+
+- [MIT License](LICENSE)
+- [Change History](CHANGELOG.md)
+- [How to contribute](CONTRIBUTING.md)
