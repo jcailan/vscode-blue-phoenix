@@ -1,5 +1,5 @@
 ![Icon](images/icon-small.png)
-# Blue Phoenix
+# Blue Phoenix	[![Version](http://vsmarketplacebadge.apphb.com/version/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)  [![Installs](http://vsmarketplacebadge.apphb.com/installs/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)    [![Rating](http://vsmarketplacebadge.apphb.com/rating-star/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)
 
 Blue Phoenix is a VS Code extension which targets support for SAP Development frameworks and programming languages in the Cloud Application Programming Model (CAPM) space.
 
