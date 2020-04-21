@@ -1,33 +1,60 @@
 import {
 	DocumentFormattingEditProvider,
+	DocumentRangeFormattingEditProvider,
+	FormattingOptions,
+	CancellationToken,
 	TextDocument,
 	TextEdit,
 	ProviderResult,
 	Range
 } from 'vscode';
 
-class FormatEditProvider implements DocumentFormattingEditProvider {
+class FormatEditProvider implements
+	DocumentFormattingEditProvider,
+	DocumentRangeFormattingEditProvider {
+
+	private commentRegex: RegExp = /(\/\*)[\w\d\-\n\r\t\? .,;:|/<>"'~!@#$%^&*()+=]*?(\*\/)|--[\w\d\-\t\? .,;:|/<>"'~!@#$%^&*()+=]*|(('[\w\d ".,|()]*?')|("[\w.]*?")(?!\())/g;
+	private keyWordRegex: RegExp = /^\b(library|sqlscript|replace|increment|minvalue|maxvalue|right|public|variable|constant|invoker|true|false|for|do|exit handler|reads|sqlexception|elseif|record_count|round|round_half_up|array_agg|cardinality|string|cast|avg|min|concat|bintostr|sum|(row|table) like|procedure|function|returns?|in|out|declare|using|array|language|sql|security|as|begin|end|if|is|not|or|else|and|then|case|when|while|(tiny)?int|date|integer|boolean|n?varchar|decimal|table|data|select|distinct|top|union all|(inner|left outer) join|on|ifnull|(group|order) by|desc|where|count|into|from|call|break|continue|now|null|values|update|set|insert|delete|commit|exec)\b$/i;
+	private wordRegex: RegExp = /\b(exit handler|union all|(group|order) by|(row|table) like|(inner|left outer) join|(?!\d)(?!\.)[\w.]+)\b/gi;
 
 	public provideDocumentFormattingEdits(
-		document: TextDocument
+		document: TextDocument,
+		options: FormattingOptions,
+		token: CancellationToken
 	): ProviderResult<TextEdit[]> {
-		const commentRegex: RegExp = /(\/\*)[\w\d\-\n\r\t\? .,;:|/<>"'~!@#$%^&*()+=]*?(\*\/)|--[\w\d\-\t\? .,;:|/<>"'~!@#$%^&*()+=]*|(('[\w\d ".,|()]*?')|("[\w.]*?")(?!\())/g;
-		const keyWordRegex: RegExp = /^\b(library|sqlscript|replace|increment|minvalue|maxvalue|right|public|variable|constant|invoker|true|false|for|do|exit handler|reads|sqlexception|elseif|record_count|round|round_half_up|array_agg|cardinality|string|cast|avg|min|concat|bintostr|sum|(row|table) like|procedure|function|returns?|in|out|declare|using|array|language|sql|security|as|begin|end|if|is|not|or|else|and|then|case|when|while|(tiny)?int|date|integer|boolean|n?varchar|decimal|table|data|select|distinct|top|union all|(inner|left outer) join|on|ifnull|(group|order) by|desc|where|count|into|from|call|break|continue|now|null|values|update|set|insert|delete|commit|exec)\b$/i;
-		const wordRegex: RegExp = /\b(exit handler|union all|(group|order) by|(row|table) like|(inner|left outer) join|(?!\d)(?!\.)[\w.]+)\b/gi;
+		return this.formatDocument(document, this.getFullDocumentRange(document));
+	}
+
+	public provideDocumentRangeFormattingEdits(
+		document: TextDocument,
+		range: Range,
+		options: FormattingOptions,
+		token: CancellationToken
+	): ProviderResult<TextEdit[]> {
+		return this.formatDocument(document, range);
+	}
+
+	private formatDocument(
+		document: TextDocument,
+		range: Range
+	): ProviderResult<TextEdit[]> {
 		let comments: string[] = [];
-		let result: any;
-		let text = document.getText();
+		let comment: any;
+		let text = document.getText(range);
 
 		do {
-			result = commentRegex.exec(text);
-			if (result !== null) {
-				comments.push(result[0]);
+			comment = this.commentRegex.exec(text);
+			if (comment !== null) {
+				comments.push(comment[0]);
 			}
-		} while (result !== null);
+		} while (comment !== null);
 
-		text = text.replace(commentRegex, '---');
-		text = text.replace(wordRegex, function (word) {
-			if (keyWordRegex.test(word)) {
+		if (comments.length) {
+			text = text.replace(this.commentRegex, '---');
+		}
+		
+		text = text.replace(this.wordRegex, (word) => {
+			if (this.keyWordRegex.test(word)) {
 				return word.toUpperCase();
 			} else {
 				return word.toLowerCase();
@@ -38,10 +65,10 @@ class FormatEditProvider implements DocumentFormattingEditProvider {
 			text = text.replace(/---/, comment);
 		});
 
-		return [TextEdit.replace(this.fullDocumentRange(document), text)];
+		return [TextEdit.replace(range, text)];
 	}
 
-	private fullDocumentRange(document: TextDocument): Range {
+	private getFullDocumentRange(document: TextDocument): Range {
 		const lastLineId = document.lineCount - 1;
 		return new Range(0, 0, lastLineId, document.lineAt(lastLineId).text.length);
 	}

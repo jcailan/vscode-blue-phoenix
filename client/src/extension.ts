@@ -71,6 +71,8 @@ export function activate(context: ExtensionContext) {
 
 	disposable = languages.registerDocumentFormattingEditProvider('sqlscript', new FormatEditProvider);
 	context.subscriptions.push(disposable);
+	disposable = languages.registerDocumentRangeFormattingEditProvider('sqlscript', new FormatEditProvider);
+	context.subscriptions.push(disposable);
 }
 
 export function deactivate(): Thenable<void> | undefined {

@@ -4,7 +4,9 @@ All notable changes to the **Blue Phoenix** extension will be documented in this
 
 #### Unreleased
 
-- Still tinkering on what should be the next feature to add
+- SQLScript Language Support
+	- Format a range of selected code
+> Still tinkering on what should be the next feature to add
 
 #### Release 1.0.0
 
