@@ -1,7 +1,12 @@
-![Icon](images/icon-small.png)
-# Blue Phoenix	[![Version](http://vsmarketplacebadge.apphb.com/version/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)  [![Installs](http://vsmarketplacebadge.apphb.com/installs/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)    [![Rating](http://vsmarketplacebadge.apphb.com/rating-star/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)
+![Icon](images/icon-small.png)	[![Version](http://vsmarketplacebadge.apphb.com/version/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)  [![Installs](http://vsmarketplacebadge.apphb.com/installs/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)    [![Rating](http://vsmarketplacebadge.apphb.com/rating-star/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)
+
+# Blue Phoenix
 
 Blue Phoenix is a VS Code extension which targets support for SAP Development frameworks and programming languages in the Cloud Application Programming Model (CAPM) space.
+
+## Preview
+
+![Format Document](images/sqlscript-format-document.gif)
 
 ## Features
 
@@ -19,7 +24,7 @@ Blue Phoenix is a VS Code extension which targets support for SAP Development fr
 
 ![Screenshot](images/sqlscript-syntax-highlighting.png)
 
-## SAP XSJS Language Support
+## About the XSJS Language Support VS Code Extension
 
 This is to support syntax highlighting for SAP XSJS framework which is based in JavaScript language.
 
