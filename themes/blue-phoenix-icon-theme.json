@@ -35,46 +35,60 @@
 	],
 	"iconDefinitions": {
 		"_xs_xsodata": {
-			"fontCharacter": "\\0043",
-			"fontColor": "#FFBF01",
-			"fontId": "blue-phoenix",
-			"fontSize": "100%"
+			"fontCharacter": "\\E064",
+			"fontColor": "#FF8B00"
 		},
 		"_xs_xsjs": {
-			"fontCharacter": "\\0043",
-			"fontColor": "#5B9BD5",
-			"fontId": "blue-phoenix",
-			"fontSize": "100%"
-		},
-		"_config_default": {
 			"fontCharacter": "\\0044",
 			"fontColor": "#5B9BD5",
 			"fontId": "blue-phoenix",
 			"fontSize": "100%"
 		},
-		"_hdb_default": {
-			"fontCharacter": "\\0041",
-			"fontColor": "#5B9BD5",
+		"_xs_xsjslib": {
+			"fontCharacter": "\\0044",
+			"fontColor": "#4372C3",
 			"fontId": "blue-phoenix",
 			"fontSize": "100%"
 		},
+		"_xs_cds": {
+			"fontCharacter": "\\0045",
+			"fontColor": "#70AD47",
+			"fontId": "blue-phoenix",
+			"fontSize": "100%"
+		},
+		"_config_default": {
+			"fontCharacter": "\\E017",
+			"fontColor": "#5B9BD5"
+		},
+		"_hdb_default": {
+			"fontCharacter": "\\E01F",
+			"fontColor": "#5B9BD5"
+		},
+		"_hdb_procedure": {
+			"fontCharacter": "\\E01F",
+			"fontColor": "#4372C3"
+		},
+		"_hdb_cds": {
+			"fontCharacter": "\\E01F",
+			"fontColor": "#70AD47"
+		},
+		"_hdb_view": {
+			"fontCharacter": "\\E01F",
+			"fontColor": "#A9D08E"
+		},
 		"_hdb_library": {
-			"fontCharacter": "\\0046",
+			"fontCharacter": "\\0041",
 			"fontColor": "#BF8F01",
 			"fontId": "blue-phoenix",
 			"fontSize": "100%"
 		},
 		"_hdb_access": {
-			"fontCharacter": "\\0047",
-			"fontColor": "#FFBF01",
-			"fontId": "blue-phoenix",
-			"fontSize": "100%"
+			"fontCharacter": "\\E055",
+			"fontColor": "#FFBF01"
 		},
 		"_hdb_role": {
-			"fontCharacter": "\\0047",
-			"fontColor": "#70AD47",
-			"fontId": "blue-phoenix",
-			"fontSize": "100%"
+			"fontCharacter": "\\E055",
+			"fontColor": "#70AD47"
 		},
 		"_R_light": {
 			"fontCharacter": "\\E001",
@@ -1420,13 +1434,14 @@
 	"fileExtensions": {
 		"xsodata": "_xs_xsodata",
 		"xsjs": "_xs_xsjs",
-		"xsjslib": "_xs_xsjs",
-		"hdiconfig": "_json",
+		"xsjslib": "_xs_xsjslib",
+		"cds": "_xs_cds",
+		"hdiconfig": "_config_default",
 		"hdinamespace": "_json",
 		"hdbafllangprocedure": "_hdb_default",
 		"hdbanalyticprivilege": "_hdb_access",
-		"hdbcalculationview": "_hdb_default",
-		"hdbcds": "_hdb_default",
+		"hdbcalculationview": "_hdb_view",
+		"hdbcds": "_hdb_cds",
 		"hdbcollection": "_hdb_default",
 		"hdbconstraint": "_hdb_default",
 		"hdbdropcreatetable": "_hdb_default",
@@ -1438,7 +1453,7 @@
 		"hdblibrary": "_hdb_library",
 		"hdblogicalschema": "_hdb_default",
 		"hdbmigrationtable": "_hdb_default",
-		"hdbprocedure": "_hdb_default",
+		"hdbprocedure": "_hdb_procedure",
 		"hdbprojectionview": "_hdb_default",
 		"hdbpublicsynonym": "_hdb_default",
 		"hdbresultcache": "_hdb_default",
@@ -1461,7 +1476,7 @@
 		"hdbtextminingconfig": "_config_default",
 		"hdbtextrule": "_hdb_default",
 		"hdbtrigger": "_hdb_default",
-		"hdbview": "_hdb_default",
+		"hdbview": "_hdb_view",
 		"hdbvirtualfunction": "_hdb_default",
 		"hdbvirtualpackage": "_hdb_default",
 		"hdbvirtualprocedure": "_hdb_default",
