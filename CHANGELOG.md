@@ -3,13 +3,15 @@
 All notable changes to the **Blue Phoenix** extension will be documented in this file.
 
 #### Unreleased
+	
+> Still tinkering on what should be the next feature to add
+
+#### Release 1.1.0
 
 - SQLScript Language Support
 	- Format a range of selected code
 - File Icon Theme
 	- Adjusted the icons for easy identification (HANA, XS, and CDS artifacts)
-	
-> Still tinkering on what should be the next feature to add
 
 #### Release 1.0.0
 

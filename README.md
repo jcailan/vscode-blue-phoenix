@@ -1,4 +1,4 @@
-![Icon](images/icon-small.png)	[![Version](http://vsmarketplacebadge.apphb.com/version/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)  [![Installs](http://vsmarketplacebadge.apphb.com/installs/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)    [![Rating](http://vsmarketplacebadge.apphb.com/rating-star/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)
+[![Version](https://vsmarketplacebadge.apphb.com/version/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)  [![Installs](https://vsmarketplacebadge.apphb.com/installs/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)    [![Rating](https://vsmarketplacebadge.apphb.com/rating-star/jhodel.blue-phoenix.svg)](https://marketplace.visualstudio.com/items?itemName=jhodel.blue-phoenix)
 
 # Blue Phoenix
 
