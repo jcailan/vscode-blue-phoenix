@@ -4,6 +4,10 @@
 
 Blue Phoenix is a VS Code extension which targets support for SAP Development frameworks and programming languages in the Cloud Application Programming Model (CAPM) space.
 
+## What's New?
+
+- See the [Change History](CHANGELOG.md) section
+
 ## Preview
 
 ![Format Document](images/sqlscript-format-document.gif)
@@ -21,6 +25,8 @@ Blue Phoenix is a VS Code extension which targets support for SAP Development fr
 	- Grammar: auto indentation and closing
 - File Icon Theme Support
 	- HANA and XSJS development artifacts
+- Linting support for mta.yaml file descriptor
+	- Highlight error when tab was used for indention
 
 ![Screenshot](images/sqlscript-syntax-highlighting.png)
 
@@ -35,5 +41,4 @@ This is to support syntax highlighting for SAP XSJS framework which is based in 
 ## Appendix
 
 - [MIT License](LICENSE)
-- [Change History](CHANGELOG.md)
 - [How to contribute](CONTRIBUTING.md)

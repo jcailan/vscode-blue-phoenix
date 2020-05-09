@@ -6,6 +6,13 @@ All notable changes to the **Blue Phoenix** extension will be documented in this
 	
 > Still tinkering on what should be the next feature to add
 
+#### Release 1.2.0
+
+- Added a linting capability for MTA.yaml
+	- Highlight error when tab was used for indention
+
+![MTA Linter](images/mta-linter.png)
+
 #### Release 1.1.0
 
 - SQLScript Language Support
