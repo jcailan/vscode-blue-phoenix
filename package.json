@@ -1,112 +1,128 @@
 {
-    "name": "blue-phoenix",
-    "displayName": "Blue Phoenix",
-    "description": "SAP Development Tools in VS Code",
-    "version": "1.2.0",
-    "publisher": "jhodel",
-    "engines": {
-        "vscode": "^1.44.0"
-    },
-    "categories": [
-        "Programming Languages",
-        "Themes",
-        "Formatters"
-    ],
+	"name": "blue-phoenix",
+	"displayName": "Blue Phoenix",
+	"description": "SAP Development Tools in VS Code",
+	"version": "1.3.0",
+	"publisher": "jhodel",
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Themes",
+		"Formatters"
+	],
 	"keywords": [
-        "xsjs", "xsjslib", "xsodata", "sap", "capm", "cap model", "hana", "xsa", "sqlscript"
-    ],
+		"xsjs",
+		"xsjslib",
+		"xsodata",
+		"sap",
+		"capm",
+		"cap model",
+		"hana",
+		"xsa",
+		"sqlscript"
+	],
 	"bugs": {
 		"url": "https://github.com/jcailan/vscode-blue-phoenix/issues"
-    },
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jcailan/vscode-blue-phoenix"
-    },
-    "icon": "images/icon.png",
-    "activationEvents": [
-        "onLanguage:yaml"
-    ],
-    "main": "./client/out/extension",
-    "contributes": {
-        "iconThemes": [
-            {
-                "id": "blue-phoenix",
-                "label": "Blue Phoenix Icon Theme",
-                "path": "./themes/blue-phoenix-icon-theme.json"
-            }
-        ],
-        "languages": [
-            {
-                "id": "hana_json",
-                "aliases": [
-                    "JSON",
-                    "json"
-                ],
-                "extensions": [
-                    ".hdiconfig",
-                    ".hdinamespace",
-                    ".hdbgrants",
-                    ".hdbrole",
-                    ".hdbsynonym",
-                    ".hdbsynonymtemplate"
-                ],
-                "configuration": "./language-configuration/json-language-configuration.json"
-            },
-            {
-                "id": "sqlscript",
-                "aliases": [
-                    "SQLScript",
-                    "sqlscript"
-                ],
-                "extensions": [
-                    ".hdblibrary",
-                    ".hdbfunction",
-                    ".hdbprocedure",
-                    ".hdbsequence"
-                ],
-                "configuration": "./language-configuration/sqlscript-language-configuration.json"
-            },
-            {
-                "id": "xsjs",
-                "aliases": ["XSJS", "xsjs"],
-                "extensions": [".xsjs",".xsjslib",".xsodata"],
-                "configuration": "./language-configuration/xsjs-language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "hana_json",
-                "scopeName": "source.json",
-                "path": "./syntaxes/JSON.tmLanguage.json"
-            },
-            {
-                "language": "sqlscript",
-                "scopeName": "source.sqlscript",
-                "path": "./syntaxes/sqlscript.tmLanguage.json"
-            },
-            {
-                "language": "xsjs",
-                "scopeName": "source.xsjs",
-                "path": "./syntaxes/xsjs.tmLanguage.json",
-                "embeddedLanguages": {
-                    "meta.embedded.block.javascript": "javascript"
-                }
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -b",
-        "watch": "tsc -b -w",
-        "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-        "test": "sh ./scripts/e2e.sh"
-    },
-    "devDependencies": {
-        "@types/mocha": "^5.2.7",
-        "mocha": "^6.2.2",
-        "@types/node": "^12.11.7",
-        "eslint": "^6.4.0",
-        "@typescript-eslint/parser": "^2.3.0",
-        "typescript": "^3.8.3"
-    }
+	},
+	"icon": "images/icon.png",
+	"activationEvents": [
+		"onLanguage:yaml"
+	],
+	"main": "./client/out/extension",
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "blue-phoenix",
+				"label": "Blue Phoenix Icon Theme",
+				"path": "./themes/blue-phoenix-icon-theme.json"
+			}
+		],
+		"languages": [
+			{
+				"id": "hana_json",
+				"aliases": [
+					"JSON",
+					"json"
+				],
+				"extensions": [
+					".hdiconfig",
+					".hdinamespace",
+					".hdbgrants",
+					".hdbrole",
+					".hdbsynonym",
+					".hdbsynonymtemplate",
+					".csn"
+				],
+				"configuration": "./language-configuration/json-language-configuration.json"
+			},
+			{
+				"id": "sqlscript",
+				"aliases": [
+					"SQLScript",
+					"sqlscript"
+				],
+				"extensions": [
+					".hdblibrary",
+					".hdbfunction",
+					".hdbprocedure",
+					".hdbsequence"
+				],
+				"configuration": "./language-configuration/sqlscript-language-configuration.json"
+			},
+			{
+				"id": "xsjs",
+				"aliases": [
+					"XSJS",
+					"xsjs"
+				],
+				"extensions": [
+					".xsjs",
+					".xsjslib",
+					".xsodata"
+				],
+				"configuration": "./language-configuration/xsjs-language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "hana_json",
+				"scopeName": "source.json",
+				"path": "./syntaxes/JSON.tmLanguage.json"
+			},
+			{
+				"language": "sqlscript",
+				"scopeName": "source.sqlscript",
+				"path": "./syntaxes/sqlscript.tmLanguage.json"
+			},
+			{
+				"language": "xsjs",
+				"scopeName": "source.xsjs",
+				"path": "./syntaxes/xsjs.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.javascript": "javascript"
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+		"test": "sh ./scripts/e2e.sh"
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.7",
+		"mocha": "^6.2.2",
+		"@types/node": "^12.11.7",
+		"eslint": "^6.4.0",
+		"@typescript-eslint/parser": "^2.3.0",
+		"typescript": "^3.8.3"
+	}
 }

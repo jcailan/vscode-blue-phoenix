@@ -6,6 +6,11 @@ All notable changes to the **Blue Phoenix** extension will be documented in this
 	
 > Still tinkering on what should be the next feature to add
 
+#### Release 1.3.0
+
+- Added syntax highlighting for *.csn files
+- Added icon theme for *.edmx, *.csn, and *.db files
+
 #### Release 1.2.0
 
 - Added a linting capability for MTA.yaml

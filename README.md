@@ -20,11 +20,13 @@ Blue Phoenix is a VS Code extension which targets support for SAP Development fr
 	- Source code formatting
 - HANA Configuration Artifacts
 	- JSON Syntax Highlighting
+- Cloud Application Programming (CAP) Model
+	- Syntax highlighting
 - XSJS Framework
 	- Syntax highlighting
 	- Grammar: auto indentation and closing
 - File Icon Theme Support
-	- HANA and XSJS development artifacts
+	- HANA, XSJS, and CAP Model development artifacts
 - Linting support for mta.yaml file descriptor
 	- Highlight error when tab was used for indention
 
