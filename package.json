@@ -32,7 +32,8 @@
 	},
 	"icon": "images/icon.png",
 	"activationEvents": [
-		"onLanguage:yaml"
+		"onLanguage:yaml",
+		"onLanguage:sqlscript"
 	],
 	"main": "./client/out/extension",
 	"contributes": {
