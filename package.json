@@ -72,6 +72,9 @@
 					".hdblibrary",
 					".hdbfunction",
 					".hdbprocedure",
+					".hdbtabletype",
+					".hdbtable",
+					".hdbview",
 					".hdbsequence"
 				],
 				"configuration": "./language-configuration/sqlscript-language-configuration.json"
