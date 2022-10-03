@@ -58,6 +58,7 @@
 					".hdbrole",
 					".hdbsynonym",
 					".hdbsynonymtemplate",
+					".hdbtabledata",
 					".csn"
 				],
 				"configuration": "./language-configuration/json-language-configuration.json"
@@ -75,7 +76,11 @@
 					".hdbtabletype",
 					".hdbtable",
 					".hdbview",
-					".hdbsequence"
+					".hdbconstraint",
+					".hdbsequence",
+					".hdbvirtualfunction",
+					".hdbvirtualprocedure",
+					".hdbdropcreatetable"
 				],
 				"configuration": "./language-configuration/sqlscript-language-configuration.json"
 			},
