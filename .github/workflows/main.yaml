@@ -25,5 +25,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install VSCE tool
+        run: npm install -g vsce
+
       - name: Publish to VSCode Marketplace
         run: vsce publish -p ${{ secrets.VSCE_TOKEN }}
