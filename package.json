@@ -2,7 +2,7 @@
 	"name": "blue-phoenix",
 	"displayName": "Blue Phoenix",
 	"description": "SAP Development Tools in VS Code",
-	"version": "1.3.3",
+	"version": "1.3.4",
 	"publisher": "jhodel",
 	"engines": {
 		"vscode": "^1.44.0"
@@ -128,10 +128,11 @@
 	},
 	"devDependencies": {
 		"@types/mocha": "^5.2.7",
-		"mocha": "^6.2.2",
 		"@types/node": "^12.11.7",
-		"eslint": "^6.4.0",
 		"@typescript-eslint/parser": "^2.3.0",
-		"typescript": "^3.8.3"
+		"eslint": "^6.4.0",
+		"mocha": "^6.2.2",
+		"typescript": "^3.8.3",
+		"vsce": "^2.11.0"
 	}
 }
